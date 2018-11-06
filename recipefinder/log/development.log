@@ -1,0 +1,32 @@
+Started GET "/" for 127.0.0.1 at 2018-11-05 19:51:49 +0900
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 484ms
+
+
+  
+SyntaxError (C:/Users/Jaewoo/Documents/GitHub/jhu1/module03/recipefinder/app/models/recipe.rb:30: syntax error, unexpected ..., expecting keyword_end
+	...
+	   ^):
+  
+app/models/recipe.rb:30: syntax error, unexpected ..., expecting keyword_end
+app/controllers/recipes_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2018-11-05 19:52:34 +0900
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 7623ms
+
+
+  
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=error: certificate verify failed):
+  
+app/models/recipe.rb:38:in `for'
+app/controllers/recipes_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2018-11-05 20:00:17 +0900
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 623ms
+
+
+  
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=error: certificate verify failed):
+  
+app/models/recipe.rb:38:in `for'
+app/controllers/recipes_controller.rb:8:in `index'

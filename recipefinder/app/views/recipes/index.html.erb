@@ -1,0 +1,44 @@
+<!--
+	your view should
+		list each recipe as a row in an HTML table (<table>)
+			Each row (<tr>) should have 3 columns (<td>)
+				col 1 contains the thumbnail
+				col 2 contains the title
+				col 3 contains the social rank
+		You don't need to create an HTML form for the search term.
+		You may specify the search keyword using just the URL with the following syntax in the browser.
+			http://localhost:3000/recipes/index?search=swiss
+		add href tags to your image and title with hyperlinks on either to the actual recipe
+			Look up image_tag Rails helper for help with defining an img tag
+				http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-image_tag
+				
+	Deploy your app to Heroku at recipefinderX.herokuapp.com
+			X is any available number from 1 to 10000000.
+			you  have to define the FOOD2FORK_KEY with your key
+			https://devcenter.heroku.com/articles/config-vars#example.
+-->
+
+<h1><%= @term %> Recipes</h1>
+<% if @recipes.nil? %>
+	<p>0 Recipe Found</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Image</th>
+			<th>Title</th>
+			<th>Social Rank</th>
+		</tr>
+		<% @recipes.each do |recipe| %>
+			<tr>
+				<!--
+				Use image_tag as the first argument to link_to helper.
+				Specify width and height of 100 for your images
+				-->
+				<td><%= link_to image_tag(recipe["image_url"], width="100", height="100"), recipe["f2f_url"]%></td>
+				<!--sanitize recipe titles displayed-->
+				<td><%= link_to sanitize(recipe["title"]), recipe["f2f_url"] %></td>	
+				<td><%= recipe["social_rank"] %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
